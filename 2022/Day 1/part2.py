@@ -18,4 +18,4 @@ for line in inputFile.split('\n'):
 
 elves.sort(reverse=True)
 
-print('The three elfves with the max calories togetehr has "' + str(elves[0]+elves[1]+elves[2]) + '" calories.')
+print('The three elves with the max calories together have "' + str(elves[0]+elves[1]+elves[2]) + '" calories.')
