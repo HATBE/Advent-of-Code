@@ -1,6 +1,5 @@
 inputFile = open('input.txt', 'r').read()
 
-sumOfRooms = 0
 for line in inputFile.split('\n'):
     encRoomNumber = line[:(line.find('[')-4)]
     checksum = line[(line.find('[')+1):-1]
@@ -23,6 +22,10 @@ for line in inputFile.split('\n'):
 
 
     if mostUsedKey == checksum: # valid room
-        sumOfRooms+=sectorNumber
+        realName = ''
+        for char in encRoomNumber.replace('-', ' '):
+            realName += ''.join(chr((ord(char) - 97 + sectorNumber) % 26 + 97))
 
-print(sumOfRooms)
+        if "northpole" in realName:
+            print(sectorNumber)
+            exit()
