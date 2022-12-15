@@ -26,7 +26,8 @@ for line in data:
             isHidden = False
         else: # if not on top border
 
-            print(yIndex, xIndex)
+            for xAxis in reversed(range(0, xIndex)):
+                print(treeMap[xAxis + 1][yIndex])
  
 
         # scan right
@@ -56,4 +57,4 @@ for line in data:
     if(xIndex <= xLines): # end of x axis
             yLines == 0
 
-print(treeMap)
+#print(treeMap)
